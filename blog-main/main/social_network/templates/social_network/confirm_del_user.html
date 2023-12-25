@@ -1,0 +1,9 @@
+{% extends 'social_network/base.html' %}
+{% block navigation %}
+     <a href="{% url 'main:index' %}"><p>Главная</p></a>
+     <a href="{% url 'main:profile' pk %}"><p>Назад</p></a>
+{% endblock %}
+{% block content %}
+    <h1 class="red_a">{{ title }}</h1>
+    <a href="{% url 'main:delete1' pk %}"><button>Удалить пользователя!!!!!!</button></a>
+{% endblock %}

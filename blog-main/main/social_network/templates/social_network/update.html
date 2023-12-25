@@ -1,0 +1,16 @@
+{% extends 'social_network/base.html' %}
+{% block navigation %}
+        <a href="{% url 'main:index' %}"><p>Главная</p></a>
+        <a href="{% url 'main:users' %}"><p>Все пользователи</p></a>
+        <a href="{% url 'main:profile' request.user.id %}"><p>Моя страничка</p></a>
+        <a href="{% url 'main:logout' %}"><p>Выйти</p></a>
+        <a href="{% url 'main:wanna_delete' request.user.id %}"><p>Удалить пользователя</p></a>
+{% endblock %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">СОХРАНИТЬ</button>
+    </form>
+{% endblock %}

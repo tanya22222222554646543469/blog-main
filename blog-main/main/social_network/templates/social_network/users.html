@@ -1,0 +1,24 @@
+{% extends 'social_network/base.html' %}
+
+{% block navigation %}
+    {% if user.is_authenticated %}
+        <h3>{{ user.username }}</h3>
+        <a href="{% url 'main:index' %}"><p>Главная</p></a>
+        <a href="{% url 'main:users' %}"><p>Все пользователи</p></a>
+        <a href="{% url 'main:profile' request.user.id %}"><p>Моя страничка</p></a>
+        <a href="{% url 'main:logout' %}"><p>Выйти</p></a>
+        <a href="{% url 'main:wanna_delete' request.user.id %}"><p>Удалить пользователя</p></a>
+    {% else %}
+        <a href="{% url 'main:index' %}"><p>Главная</p></a>
+        <a href="{% url 'main:registration' %}"><p>Регистрация</p></a>
+        <a href="{% url 'main:login' %}"><p>Войти</p></a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Список пользователей кому можно написать</h2>
+    {% for i in users_list %}
+        <a href="{% url 'main:profile' i.pk %}"><p>{{ i.username }} -- {{ i.first_name }} {{ i.last_name }}</p></a>
+        <hr>
+    {% endfor %}
+{% endblock %}

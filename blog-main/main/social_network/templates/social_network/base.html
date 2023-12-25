@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link type="text/css" href="{% static 'social_network/style.css' %}" rel="stylesheet">
+</head>
+<body >
+    <div class="container-fluid">
+        <div class ="navigation">{% block navigation %} {% endblock %}</div>
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

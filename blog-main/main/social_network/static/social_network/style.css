@@ -1,0 +1,53 @@
+*{
+    font-family: 'Roboto';
+}
+ a{
+    text-decoration:none;
+    color: DarkSlateGray;
+ }
+body{
+    display:flex;
+    justify-content:center;
+    margin:40px;
+}
+img{
+    max-width:500px;
+}
+.red_a{
+    color: FireBrick;
+}
+.only_small{
+    max-width:350px;
+}
+.main_box{
+    width:800px;
+    border-radius:15px;
+    background:#f0f4f5;
+    padding: 30px 20px;
+    margin:40px 0;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:530px;
+    left:30px;
+    top:50px;
+    background: #e6bbf2;
+    border-radius:10px;
+}
+
+.pagination{
+    display:flex;
+    justify-content:left;
+}
+.pagination li{
+    position:relative;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+
+}
+.pagination li div{
+    position:absolute;
+}
